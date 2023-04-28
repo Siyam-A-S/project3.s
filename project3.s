@@ -64,4 +64,8 @@ sub_a:
 	addi $a0, $t7, 0
 	syscall
 
+	li $v0, 4
+	la $a0, left_paren
+	syscall
+
 	
