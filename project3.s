@@ -32,6 +32,11 @@ sub_a:
 	lw $t0, ($sp)
 	addi $sp, $sp, 4
 
+	Loop1:
+	li $t5, 0
+	addi $sp, $sp, -8
+	sw $t0, ($sp)
+
 	pass_sub_b:     			# function to pass strings to second subprogram
 	sw $t0, 4($sp)
 	jal sub_b
