@@ -135,4 +135,7 @@ sub_b:
 		blt $t3, 65, Invalid		# if character < 'A' jump to Invalid
 		li $t6, -55			# assign character's value
 		j Calculations			# jump to Calculations
+	Lower:	bgt $t3, 118, Invalid		# if character > 'v' then jump to Invalid
+		blt $t3, 97, Invalid		# if character < 'a' jump to Invalid
+		li $t6, -87			# assign character's value to $t3
 	
