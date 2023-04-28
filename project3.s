@@ -95,6 +95,10 @@ sub_a:
 	
 	j Loop1
 
+	End:
+	la $ra, 0($t1)
+	jr $ra
+
 	
 
 	
