@@ -105,3 +105,8 @@ sub_b:
 	li $t6, 0
 	li $t7, 0
 	
+	lw $t4, ($sp)
+	lw $t9, 4($sp)
+	lb $t2, ($t9)
+	addi $sp, $sp, 8
+	
