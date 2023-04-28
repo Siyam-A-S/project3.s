@@ -83,6 +83,12 @@ sub_a:
 	addi $sp, $sp, 8
 	lb $t5, ($t9)
 	beq $t5, 10, End
+	beq $t5, 0, End
+	beq $t5, 44, NextIndex
+	
+	NextIndex:
+	la $t0, ($t9)
+	addi $t0, $t0, 1
 	
 
 	
