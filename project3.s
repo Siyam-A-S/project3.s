@@ -170,5 +170,11 @@ sub_b:
 	sw $t9, 4($sp)
 	
 	jr $ra
+
+	Invalid:
+	li $t7, -1
+	sw $t7, ($sp)
+	sw $t9, 4($sp)
+	jr $ra
 	
 	
