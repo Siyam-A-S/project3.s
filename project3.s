@@ -162,3 +162,11 @@ sub_b:
 							
 	Valid:	bne $t8, 0, Balance_out		# to check whether the string is valid or invalid
 		j Invalid
+	
+	Balance_out:
+	div $t7, $t7, 32	# divide by 32 to accommodate for the last multiplication
+	addi $sp, $sp, -8
+	sw $t7, ($sp)
+	sw $t9, 4($sp)
+	
+	
