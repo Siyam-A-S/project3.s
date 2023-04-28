@@ -100,5 +100,8 @@ sub_a:
 	jr $ra
 
 	
-
+sub_b:	
+	li $t8, 0
+	li $t6, 0
+	li $t7, 0
 	
