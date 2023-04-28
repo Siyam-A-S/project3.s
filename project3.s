@@ -27,7 +27,12 @@ main:
 Exit:	li $v0, 10
 	syscall
 
-ErrorMsg:					# print invalid message when input is invalid
+sub_a:	
+	la $t1, ($ra)
+	lw $t0, ($sp)
+	addi $sp, $sp, 4
+
+	ErrorMsg:					# print invalid message when input is invalid
 	li $v0, 4				# print a string
 	la $a0, invalid				# load the invalid label
 	syscall					# execute print
