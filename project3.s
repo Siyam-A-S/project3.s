@@ -18,6 +18,11 @@ main:
 	la $a0, userInput 			# load input buffer
 	li $a1, 1001 				# maximum length (including null terminator) 
 	syscall 				# execute
+	
+	la $t0, ($a0)				# load the address of input in stack to pass to sub_a
+	addi $sp, $sp, -4
+	sw $t0, ($sp) 
+	jal sub_a	
 
 Exit:	li $v0, 10
 	syscall
