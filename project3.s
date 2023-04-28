@@ -113,6 +113,13 @@ sub_b:
 	Leading:		# to skip leading spaces and tabs
 	lb $t3, ($t4)	# loading the subsequent bit to $t3
 	beq $t3, $t2, Valid
-	bne $t3, 32, 	# check for leading space
+	bne $t3, 32, Tab1	# check for leading space
 	j Skip1
 	
+	Tab1:	bne $t3, 9, Loop3
+	Skip1:	addi $t4, $t4, 1
+		j Leading
+
+	Loop3:
+	lb $t3, ($t4)
+	bgt $t8, 4, Invalid
