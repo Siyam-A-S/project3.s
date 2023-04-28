@@ -77,6 +77,12 @@ sub_a:
 	syscall
 	
 	j Position
+
+	Position:
+	lw $t9, 4($sp)
+	addi $sp, $sp, 8
+	lb $t5, ($t9)
+	beq $t5, 10, End
 	
 
 	
