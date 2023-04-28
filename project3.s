@@ -123,3 +123,7 @@ sub_b:
 	Loop3:
 	lb $t3, ($t4)
 	bgt $t8, 4, Invalid
+	beq $t3, $t2, Valid
+	beq $t3, 32, Trailing
+	beq $t3, 9, Trailing
+	
