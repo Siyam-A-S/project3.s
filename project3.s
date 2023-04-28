@@ -32,7 +32,15 @@ sub_a:
 	lw $t0, ($sp)
 	addi $sp, $sp, 4
 
-	ErrorMsg:					# print invalid message when input is invalid
+	pass_sub_b:     			# function to pass strings to second subprogram
+	sw $t0, 4($sp)
+	jal sub_b
+	lw $t7, ($sp)
+	beq $t7, -1, ErrorMsg
+	
+	j PrintValue
+
+	ErrorMsg:				# print invalid message when input is invalid
 	li $v0, 4				# print a string
 	la $a0, invalid				# load the invalid label
 	syscall					# execute print
