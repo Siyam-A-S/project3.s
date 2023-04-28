@@ -19,6 +19,9 @@ main:
 	li $a1, 1001 				# maximum length (including null terminator) 
 	syscall 				# execute
 
+Exit:	li $v0, 10
+	syscall
+
 ErrorMsg:					# print invalid message when input is invalid
 	li $v0, 4				# print a string
 	la $a0, invalid				# load the invalid label
