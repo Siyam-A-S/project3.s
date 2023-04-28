@@ -169,4 +169,6 @@ sub_b:
 	sw $t7, ($sp)
 	sw $t9, 4($sp)
 	
+	jr $ra
+	
 	
