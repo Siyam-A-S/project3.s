@@ -57,5 +57,11 @@ sub_a:
 	li $v0, 4				# print a string
 	la $a0, invalid				# load the invalid label
 	syscall					# execute print
+	j Position				# jump to Postion function
+	
+	PrintValue:
+	li $v0, 1
+	addi $a0, $t7, 0
+	syscall
 
 	
