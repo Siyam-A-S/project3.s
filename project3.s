@@ -109,4 +109,10 @@ sub_b:
 	lw $t9, 4($sp)
 	lb $t2, ($t9)
 	addi $sp, $sp, 8
+
+	Leading:		# to skip leading spaces and tabs
+	lb $t3, ($t4)	# loading the subsequent bit to $t3
+	beq $t3, $t2, Valid
+	bne $t3, 32, 	# check for leading space
+	j Skip1
 	
