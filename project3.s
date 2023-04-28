@@ -71,5 +71,12 @@ sub_a:
 	li $v0, 1
 	addi $a0, $t8, 0
 	syscall
+	
+	li $v0, 4
+	la $a0, right_paren
+	syscall
+	
+	j Position
+	
 
 	
