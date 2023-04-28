@@ -139,3 +139,7 @@ sub_b:
 		blt $t3, 97, Invalid		# if character < 'a' jump to Invalid
 		li $t6, -87			# assign character's value to $t3
 	
+	Calculations:
+		add $t6, $t3, $t6		# turn the character to its decimal value
+		add $t7, $t7, $t6		# add that value to $t7 in every iteration
+		mul $t7, $t7, 32		# multiply $t7 by 32 in every iteration	
