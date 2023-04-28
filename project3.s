@@ -126,4 +126,9 @@ sub_b:
 	beq $t3, $t2, Valid
 	beq $t3, 32, Trailing
 	beq $t3, 9, Trailing
+
+	Nums:	bgt $t3, 57, Upper		
+		blt $t3, 48, Invalid		
+		li $t6, -48			# assign character's value 
+		j Calculations			# jump to Calculations
 	
