@@ -153,3 +153,12 @@ sub_b:
 	beq $t3, $t2, Valid			# 
 	bne $t3, 32, Tab2			# check for trailing space 
 	j Skip2					# continue loop
+
+	Tab2:	bne $t3, 9, Invalid		# check for trailing tab
+	
+	Skip2:	addi $t4, $t4, 1		# go to the next byte address
+		j Trailing				# loop again in Trailing
+	
+							
+	Valid:	bne $t8, 0, Balance_out		# to check whether the string is valid or invalid
+		j Invalid
