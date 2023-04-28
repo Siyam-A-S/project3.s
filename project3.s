@@ -147,3 +147,9 @@ sub_b:
 	Next:	addi $t4, $t4, 1		# go to the next byte address
 		addi $t8, $t8, 1		# increment by 1 the length counter of input
 		j Loop3			# jump to Loop3
+	
+	Trailing:
+	lb $t3, ($t4)				# loading the subsequent bit to $t3
+	beq $t3, $t2, Valid			# 
+	bne $t3, 32, Tab2			# check for trailing space 
+	j Skip2					# continue loop
