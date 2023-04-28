@@ -89,6 +89,12 @@ sub_a:
 	NextIndex:
 	la $t0, ($t9)
 	addi $t0, $t0, 1
+	li $v0, 4
+	la $a0, comma
+	syscall
+	
+	j Loop1
+
 	
 
 	
