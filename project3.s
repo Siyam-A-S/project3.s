@@ -143,3 +143,7 @@ sub_b:
 		add $t6, $t3, $t6		# turn the character to its decimal value
 		add $t7, $t7, $t6		# add that value to $t7 in every iteration
 		mul $t7, $t7, 32		# multiply $t7 by 32 in every iteration	
+
+	Next:	addi $t4, $t4, 1		# go to the next byte address
+		addi $t8, $t8, 1		# increment by 1 the length counter of input
+		j Loop3			# jump to Loop3
